@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment - Pet Clinic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1601758173924-1984f0c98498?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.85);
+      text-align: center;
+      padding: 30px 20px 20px;
+      border-bottom: 4px solid #ff6f61;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #555;
+      margin-top: 8px;
+    }
+
+    nav {
+      background-color: #ff6f61;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2c3e50;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2e1515;
+      margin-top: 40px;
+      text-shadow: 1px 1px 3px #000;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    h2 i {
+      color: #ff6f61;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 55%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 16px;
+    }
+
+    input, textarea {
+      width: calc(100% - 50px);
+      padding: 12px 12px 12px 38px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e85d50;
+    }
+
+    .overlay-success {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .overlay-success img {
+      width: 200px;
+      animation: bounce 1s infinite;
+    }
+
+    .overlay-success h1 {
+      color: #2c3e50;
+      font-size: 28px;
+      margin-top: 20px;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      form {
+        margin: 15px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1><i class="fa-solid fa-paw"></i> Rudra Pet Clinic</h1>
+    <p>Your Pet's Health is Our Priority</p>
+  </header>
+
+  <!-- Nav Bar -->
+  <nav>
+    <a href="index.html"><i class="fa fa-home"></i> Home</a>
+    <a href="about.html"><i class="fa fa-info-circle"></i> About Us</a>
+    <a href="gallery.html"><i class="fa fa-image"></i> Gallery</a>
+    <a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a>
+    <a href="appointment.html"><i class="fa fa-calendar-check"></i> Book An Appointment</a>
+  </nav>
+
+  <h2><i class="fa-solid fa-paw"></i> Book Your Pet's Appointment</h2>
+
+  <form id="appointmentForm">
+    <div class="input-group">
+      <label for="name">Name:</label>
+      <i class="fa fa-user"></i>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="input-group">
+      <label for="email">Email:</label>
+      <i class="fa fa-envelope"></i>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="input-group">
+      <label for="phone">Phone:</label>
+      <i class="fa fa-phone"></i>
+      <input type="tel" id="phone" name="phone" required />
+    </div>
+
+    <div class="input-group">
+      <label for="date">Preferred Date:</label>
+      <i class="fa fa-calendar-alt"></i>
+      <input type="date" id="date" name="date" required />
+    </div>
+
+    <div class="input-group">
+      <label for="time">Preferred Time:</label>
+      <i class="fa fa-clock"></i>
+      <input type="time" id="time" name="time" required />
+    </div>
+
+    <div class="input-group">
+      <label for="message">Message:</label>
+      <i class="fa fa-comment-dots"></i>
+      <textarea id="message" name="message" placeholder="Any special instructions?"></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Success Overlay Animation -->
+  <div class="overlay-success" id="successOverlay">
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Dog Barking" />
+    <h1>Woof! Your appointment is booked! 🐾</h1>
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbySaiTugl18DGToKQHffhyYozqxOAjyXuY0uArQX-945XtEZurWrFSxZ6HCn6TFUlqAUg/exec";
+    const form = document.getElementById("appointmentForm");
+    const overlay = document.getElementById("successOverlay");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const selectedDate = new Date(form.date.value);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const selectedTime = form.time.value;
+      const [hours, minutes] = selectedTime.split(":").map(Number);
+
+      if (selectedDate < today) {
+        alert("Please select a future date for your appointment.");
+        return;
+      }
+
+      if (hours < 10 || hours > 20 || (hours === 20 && minutes > 0)) {
+        alert("Please select a time between 10:00 AM and 8:00 PM.");
+        return;
+      }
+
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: formData,
+      })
+        .then(() => {
+          overlay.style.display = "block";
+          form.reset();
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 5000);
+        })
+        .catch((error) => {
+          alert("Error submitting the form. Please try again.");
+          console.error(error);
+        });
+    });
+  </script>
+
+</body>
+</html>
