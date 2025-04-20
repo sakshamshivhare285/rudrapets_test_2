@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rudra Pet Clinic - Home</title>
+  <meta name="description" content="Rudra Pet Clinic offers compassionate and expert veterinary care in India. Our experienced doctors provide a wide range of pet services including vaccinations, diagnostics, surgeries, wellness checkups, grooming, and emergency care. Trust Rudra Pet Clinic to keep your furry family healthy, happy, and loved. In Nagpur near khamla">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      color: #333;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.85);
+      text-align: center;
+      padding: 30px 20px 20px;
+      border-bottom: 4px solid #ff6f61;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #555;
+      margin-top: 8px;
+    }
+
+    nav {
+      background-color: #ff6f61;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2c3e50;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .container h2 {
+      font-size: 28px;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .container h2 i {
+      color: #ff6f61;
+    }
+
+    .container p {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .services-grid, .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .service-box, .product-box {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .service-box:hover, .product-box:hover {
+      background-color: #ffeae6;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,111,97,0.4);
+    }
+
+    .service-box img, .product-box img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      transition: transform 0.4s ease;
+    }
+
+    .service-box:hover img, .product-box:hover img {
+      transform: rotate(-5deg) scale(1.1);
+    }
+
+    .service-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .service-box::after, .product-box::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      font-size: 13px;
+      opacity: 0;
+      transition: bottom 0.4s ease, opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .service-box:hover::after, .product-box:hover::after {
+      bottom: -10px;
+      opacity: 1;
+    }
+
+    .coming-soon {
+      animation: blink 1s infinite;
+      color: #ff6f61;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .dog-banner {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .dog-banner img {
+      width: 100px;
+      height: auto;
+    }
+
+    .dog-banner .banner {
+      background-color: #ff6f61;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 5px;
+      margin-left: -20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      .service-box img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .dog-banner {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><i class="fa-solid fa-paw"></i> Rudra Pet Clinic</h1>
+  <p>Your Pet's Health is Our Priority</p>
+</header>
+
+<nav>
+  <a href="index.html"><i class="fa fa-home"></i> Home</a>
+  <a href="about.html"><i class="fa fa-info-circle"></i> About Us</a>
+  <a href="gallery.html"><i class="fa fa-image"></i> Gallery</a>
+  <a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a>
+  <a href="appointment.html"><i class="fa fa-calendar-check"></i> Book An Appointment</a>
+</nav>
+
+<div class="container">
+  <h2><i class="fa-solid fa-heart"></i> Welcome to Rudra Pet Clinic</h2>
+  <p><strong>Welcome to Rudra Pet Clinic</strong>, your trusted destination for exceptional veterinary care. At Rudra, we believe your pets are family, and they deserve the highest standard of love, care, and medical attention. Our team of experienced veterinarians and animal care experts are dedicated to providing comprehensive healthcare services—from routine vaccinations and general checkups to emergency care, diagnostics, surgeries, and wellness treatments.</p>
+
+  <p><strong>We are available 24/7 for any pet-related emergencies</strong>, ensuring your furry companions receive immediate attention when they need it most.</p>
+
+  <p>We offer a wide range of services including blood tests, urine analysis, fluid therapy, ultrasound (coming soon), ECG and BP monitoring, and inpatient facilities. We also provide pet products such as food, supplements, grooming items, and accessories. Our mission is to treat every pet with compassion, and ensure their health and happiness through expert care and modern facilities.</p>
+
+  <p>At Rudra Pet Clinic, we don’t just treat pets—we care for them like our own. Visit us today and experience veterinary care where quality, compassion, and trust meet.</p>
+</div>
+
+<!-- Services Section -->
+<div class="container">
+  <h2><i class="fa-solid fa-stethoscope"></i> Our Services</h2>
+  <div class="services-grid">
+    <div class="service-box" data-tooltip="Essential vaccines for pets."><img src="icons\pet vaccine.png"><div class="service-title">Vaccinations</div></div>
+    <div class="service-box" data-tooltip="Routine and special checkups."><img src="icons\consulting.png"><div class="service-title">Pet Consultation</div></div>
+    <div class="service-box" data-tooltip="IV and catheter care."><img src="icons\catheter.png"><div class="service-title">Catheterization</div></div>
+    <div class="service-box" data-tooltip="Immediate care for emergencies."><img src="icons\Emergency.png"><div class="service-title">Emergency</div></div>
+    <div class="service-box" data-tooltip="Safe anesthesia services."><img src="icons\Anesthesia.png"><div class="service-title">Anesthesia</div></div>
+    <div class="service-box" data-tooltip="All veterinary medicines available."><img src="icons\medicine.png"><div class="service-title">Medicines</div></div>
+    <div class="service-box" data-tooltip="Full blood and urine analysis."><img src="icons\blood-test.png"><div class="service-title">Blood/Urine Analysis</div></div>
+    <div class="service-box" data-tooltip="In-house pet care facility."><img src="icons\Inward.png"><div class="service-title">Inward Facility</div></div>
+    <div class="service-box" data-tooltip="Hydration & nutrient therapy."><img src="icons\fluid therapy.png"><div class="service-title">Fluid Therapy</div></div>
+    <div class="service-box" data-tooltip="Tick & flea control."><img src="icons\spoton.png"><div class="service-title">Spot On</div></div>
+    <div class="service-box" data-tooltip="All treatment procedures."><img src="icons\Treatment.png"><div class="service-title">Treatment</div></div>
+    <div class="service-box" data-tooltip="Quick testing services."><img src="icons\snap test.png"><div class="service-title">Snap Test</div></div>
+    <div class="service-box" data-tooltip="Cell-level diagnosis."><img src="icons\microscopic.png"><div class="service-title">Microscopic Exam</div></div>
+    <div class="service-box" data-tooltip="Full pet checkups."><img src="icons\check up.png"><div class="service-title">General Checkups</div></div>
+    <div class="service-box coming-soon" data-tooltip="Coming soon!"><img src="icons\ultrasound.png"><div class="service-title">Ultrasound</div></div>
+    <div class="service-box coming-soon" data-tooltip="Coming soon!"><img src="icons\electrocardiogram.png"><div class="service-title">ECG + BP</div></div>
+  </div>
+</div>
+<!-- Products Section -->
+<div class="container">
+  <h2><i class="fa-solid fa-box-open"></i> Our Products</h2>
+  <div class="products-grid">
+    <div class="product-box" data-tooltip="Premium dry food for dogs.">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616430.png">
+      <div class="service-title">Dog Food</div>
+    </div>
+
+    <div class="product-box" data-tooltip="Wholesome meals for cats.">
+      <img src="https://cdn-icons-png.flaticon.com/512/922/922699.png">
+      <div class="service-title">Cat Food</div>
+    </div>
+
+    <div class="product-box coming-soon" data-tooltip="Coming soon!">
+      <img src="https://cdn-icons-png.flaticon.com/512/3036/3036914.png">
+      <div class="service-title">Shampoo</div>
+    </div>
+
+    <div class="product-box coming-soon" data-tooltip="Coming soon!">
+      <img src="https://cdn-icons-png.flaticon.com/512/2306/2306123.png">
+      <div class="service-title">Vitamins</div>
+    </div>
+
+    <div class="product-box coming-soon" data-tooltip="Coming soon!">
+      <img src="https://cdn-icons-png.flaticon.com/512/167/167707.png">
+      <div class="service-title">Leash & Collars</div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Dog Banner -->
+<div class="dog-banner">
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Dog Icon" />
+  <div class="banner"><strong>We are open 24X7 for Emergencies</strong></div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rudra Pet Clinic - Gallery & Testimonials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff; /* Changed to white */
+      color: #333;
+    }
+
+    header {
+      background-color: #ffffff; /* Changed to white */
+      text-align: center;
+      padding: 40px 20px 20px;
+      border-bottom: 4px solid #ff6f61;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #555;
+      margin-top: 8px;
+    }
+
+    nav {
+      background-color: #ff6f61;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2c3e50;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-size: 26px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ff6f61;
+      padding-bottom: 10px;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background-color: #fff7f6;
+      border-left: 5px solid #ff6f61;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      color: #2c3e50;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+      }
+      .gallery-grid img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><i class="fa-solid fa-paw"></i> Rudra Pet Clinic</h1>
+  <p>Your Pet's Health is Our Priority</p>
+</header>
+
+<nav>
+  <a href="index.html"><i class="fa fa-home"></i> Home</a>
+  <a href="about.html"><i class="fa fa-info-circle"></i> About Us</a>
+  <a href="gallery.html" class="active"><i class="fa fa-image"></i> Gallery</a>
+  <a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a>
+  <a href="appointment.html"><i class="fa fa-calendar-check"></i> Book An Appointment</a>
+</nav>
+
+<div class="container">
+  <h2><i class="fa-solid fa-comments"></i> Client Testimonials</h2>
+
+  <div class="testimonial">
+    "A huge thank you to Dr. Varad Dhoot and the team at Rudra Pet Clinic for saving my dog Biskut bread Beagle from a severe case of gastrointestinal poisoning in the middle of the night.
+    Their emergency response, care, and expertise were nothing short of exceptional. Dr. Dhoot acted quickly, diagnosed accurately, and treated Biskut with genuine compassion.
+    Thanks to them, Biskut is safe and recovering well. Highly recommend Rudra Pet Clinic for any emergency or regular pet care—they truly go above and beyond."
+    <strong>- Pankaj Shukla</strong>
+  </div>
+
+  <div class="testimonial">"Best place to make your pets survive and be healthy !!!!" <strong>- Seema Shukla</strong></div>
+  <div class="testimonial">"Best ever vets! Ready to treat 24 x 7. Glad to have them as the doctors of my dogs!" <strong>- Tanisha Daryani</strong></div>
+  <div class="testimonial">"If u want to get rid of that orthodox procedure of taking care of ur fur baby..." <strong>- Dev Mehta</strong></div>
+  <div class="testimonial">"Clean and modern clinic with an amazing team. Thank you for caring for my little pup!" <strong>- Vaishali Sathawane</strong></div>
+  <div class="testimonial">"Their check-up service is also affordable. Doctors take care of my baby very well" <strong>- Vineet Nair</strong></div>
+  <div class="testimonial">"Pets are handled with care, and the doctor is very capable" <strong>- Sonal Phatak</strong></div>
+  <div class="testimonial">"Very friendly environment, they treat pets like family!" <strong>- Dhanashree Sharma</strong></div>
+  <div class="testimonial">"The clinic provides Very good treatment. It's open 24×7. Have all the best facilities for the treatment." <strong>- Mandar Vekhande</strong></div>
+  <div class="testimonial">"Best hospital in the Nagpur" <strong>- Ameet Sharma</strong></div>
+  <div class="testimonial">"24×7 Available for Pets. Dr. Varad Sir and Dr. Devkishan Sir are fabulous and very talented." <strong>- Harsh Hattimare</strong></div>
+  <div class="testimonial">"Best Multi-speciality pet hospital in Nagpur. Latest facilities like Idexx blood test machine." <strong>- Vishal Mehra</strong></div>
+</div>
+
+<div class="container">
+  <h2><i class="fa-solid fa-camera-retro"></i> Our work</h2>
+  <div class="gallery-grid">
+    
+    <img src="Images/pet2.jpg" alt="Pet 2" />
+    <img src="Images/pet3.jpg" alt="Pet 3" />
+    <img src="Images/pet4.jpg" alt="Pet 4" />
+    <img src="Images/pet5.jpg" alt="Pet 5" />
+    <img src="Images/pet6.jpg" alt="Pet 6" />
+    <img src="Images\dannie.jpg" alt="Pet 7" />
+    <img src="Images/pet8.jpg" alt="Pet 8" />
+    <img src="Images/IMG_5709.jpg" alt="Pet 9" />
+    <img src="Images/IMG_5707.jpg" alt="Pet 10" />
+    <img src="Images/b9bc7fa9-22cc-4a4e-9f32-66c223a043c1.jpg" alt="Pet 11" />
+    <img src="Images/beb77e41-3924-4f6b-8eb6-8e27f1a0bf3d.jpg" alt="Pet 12" />
+    <img src="Images/e95a6e67-29a9-4fca-9130-288f7b6e8b61.jpg" alt="Pet 13" />
+    <img src="Images/IMG_4601.jpg" alt="Pet 14" />
+    <img src="Gallery/Biskut.jpg" alt="Pet 1" />
+  </div>
+</div>
+
+<style>
+  .gallery-grid img:hover,
+  .gallery-grid img:active {
+    transform: scale(1.5); /* Enlarges the image on hover or touch */
+    z-index: 10; /* Ensures the image appears above others */
+    position: relative; /* Allows z-index to take effect */
+  }
+
+  @media (hover: none) {
+    .gallery-grid img:active {
+      transform: scale(1.5); /* Enlarges the image on touch for mobile */
+    }
+  }
+</style>
+
+</body>
+</html>
